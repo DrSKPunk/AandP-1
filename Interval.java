@@ -45,7 +45,7 @@ public class Interval {
         System.out.println("Длина интервала = " + (x2 - x1));
     }
 
-    public static Interval add(Interval firstInter, Interval lastInter) {
+    public Interval add(Interval firstInter, Interval lastInter) {
         return new Interval(firstInter.x1, lastInter.x2);
     }
 
@@ -53,12 +53,18 @@ public class Interval {
         Interval interval1 = new Interval(10, 20);
         Interval interval2 = new Interval(33, 67);
 
-        Interval summInter = Interval.add(interval1, interval2);
+        Interval calc = new Interval();
+
+        Interval calc2 = calc.add(interval1, interval2);
+
+        System.out.println(calc2.getX1() + " " + calc2.getX2());
+
+
+        System.out.println("Вывод интервала через display: ");
+        interval2.display();
 
         Interval interval = new Interval();
         interval.read();
         System.out.println(interval.getX1() + " " + interval.getX2());
-
-        System.out.println(summInter.getX1() + " " + summInter.getX2());
     }
 }
